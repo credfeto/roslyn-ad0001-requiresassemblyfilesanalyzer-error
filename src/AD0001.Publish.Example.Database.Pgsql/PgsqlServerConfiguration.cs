@@ -1,6 +1,6 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
-namespace AD0001.Publish.Example.Lib1;
+namespace AD0001.Publish.Example.Database.Pgsql;
 
 /// <summary>
 ///     Configuration for creating Postgresql connections.

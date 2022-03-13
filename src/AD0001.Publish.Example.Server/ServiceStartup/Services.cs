@@ -1,4 +1,5 @@
-﻿using AD0001.Publish.Example.Lib1;
+﻿using AD0001.Publish.Example.Database.Pgsql;
+using AD0001.Publish.Example.Lib1;
 using AD0001.Publish.Example.Server.Helpers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +23,8 @@ internal static class Services
         services.AddOptions()
                 .AddAppLogging()
                 .Configure<PgsqlServerConfiguration>(configurationRoot.GetSection("Database:Postgres"))
-                .AddTwitch();
+                .AddPostgresql()
+                .AddLib1();
     }
 
     private static Logger CreateLogger()

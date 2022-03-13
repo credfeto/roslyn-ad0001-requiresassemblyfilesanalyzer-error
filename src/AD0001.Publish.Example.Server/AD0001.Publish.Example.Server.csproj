@@ -67,6 +67,7 @@
         <PackageReference Include="ToStringWithoutOverrideAnalyzer" Version="0.6.0" PrivateAssets="All" />
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\AD0001.Publish.Example.Database.Pgsql\AD0001.Publish.Example.Database.Pgsql.csproj"/>
       <ProjectReference Include="..\AD0001.Publish.Example.Lib1\AD0001.Publish.Example.Lib1.csproj"/>
     </ItemGroup>
     <ItemGroup>

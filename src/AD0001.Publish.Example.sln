@@ -21,6 +21,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD0001.Publish.Example.Lib1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD0001.Publish.Example.Lib1.Data.Interfaces", "AD0001.Publish.Example.Lib1.Data.Interfaces\AD0001.Publish.Example.Lib1.Data.Interfaces.csproj", "{DCA60DA1-817C-40A3-877B-1AAF218EBCA7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{78C68040-3ACB-4322-B6A5-8E0C0074EBAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD0001.Publish.Example.Database.Interfaces", "AD0001.Publish.Example.Database.Interfaces\AD0001.Publish.Example.Database.Interfaces.csproj", "{80DCE000-2076-4E43-9DAC-AA087604A8B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD0001.Publish.Example.Database.Dapper", "AD0001.Publish.Example.Database.Dapper\AD0001.Publish.Example.Database.Dapper.csproj", "{A583FAF9-29F3-4862-9B53-C6101F97A158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD0001.Publish.Example.Database.Pgsql", "AD0001.Publish.Example.Database.Pgsql\AD0001.Publish.Example.Database.Pgsql.csproj", "{5A23CCD7-40B4-4D55-8275-75F5BE7D22FB}"
+EndProject
 Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{11183690-B635-4AD6-842D-63B134BDB26D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -35,6 +43,18 @@ Global
 		{DCA60DA1-817C-40A3-877B-1AAF218EBCA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCA60DA1-817C-40A3-877B-1AAF218EBCA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCA60DA1-817C-40A3-877B-1AAF218EBCA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80DCE000-2076-4E43-9DAC-AA087604A8B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80DCE000-2076-4E43-9DAC-AA087604A8B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80DCE000-2076-4E43-9DAC-AA087604A8B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80DCE000-2076-4E43-9DAC-AA087604A8B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A583FAF9-29F3-4862-9B53-C6101F97A158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A583FAF9-29F3-4862-9B53-C6101F97A158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A583FAF9-29F3-4862-9B53-C6101F97A158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A583FAF9-29F3-4862-9B53-C6101F97A158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A23CCD7-40B4-4D55-8275-75F5BE7D22FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A23CCD7-40B4-4D55-8275-75F5BE7D22FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A23CCD7-40B4-4D55-8275-75F5BE7D22FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A23CCD7-40B4-4D55-8275-75F5BE7D22FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +62,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{11183690-B635-4AD6-842D-63B134BDB26D} = {4C9C7072-B117-48F4-A250-068B44C7C8CA}
+		{80DCE000-2076-4E43-9DAC-AA087604A8B2} = {78C68040-3ACB-4322-B6A5-8E0C0074EBAA}
+		{A583FAF9-29F3-4862-9B53-C6101F97A158} = {78C68040-3ACB-4322-B6A5-8E0C0074EBAA}
+		{5A23CCD7-40B4-4D55-8275-75F5BE7D22FB} = {78C68040-3ACB-4322-B6A5-8E0C0074EBAA}
 	EndGlobalSection
 EndGlobal
