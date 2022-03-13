@@ -32,3 +32,5 @@
  - any: [ './**/*.md' ]
 "github-actions":
  - any: [ '.github/workflows/*.yml' ]
+"Server":
+ - any: [ 'src/AD0001.Publish.Example.Server/**/*' ]
