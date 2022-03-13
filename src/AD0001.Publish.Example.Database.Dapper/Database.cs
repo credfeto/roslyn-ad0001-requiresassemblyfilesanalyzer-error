@@ -45,26 +45,6 @@ public abstract class Database : IDatabase
     }
 
     /// <inheritdoc />
-    public async Task<int> ExecuteAsync<TQueryParameters>(string storedProcedure, TQueryParameters param)
-    {
-        using (IDbConnection connection = this.GetConnection())
-        {
-            // ReSharper disable once AccessToDisposedClosure
-            return await this.ExecuteWithRetriesAsync(func: () => InternalExecuteAsync(storedProcedure: storedProcedure, param: param, connection: connection), context: storedProcedure);
-        }
-    }
-
-    /// <inheritdoc />
-    public async Task<int> ExecuteArbitrarySqlAsync(string sql)
-    {
-        using (IDbConnection connection = this.GetConnection())
-        {
-            // ReSharper disable once AccessToDisposedClosure
-            return await this.ExecuteWithRetriesAsync(func: () => connection.ExecuteAsync(sql: sql, commandType: CommandType.Text), context: sql);
-        }
-    }
-
-    /// <inheritdoc />
     public async Task<TResult> QuerySingleAsync<TSourceObject, TResult>(IObjectBuilder<TSourceObject, TResult> builder, string storedProcedure)
         where TSourceObject : class, new() where TResult : class
     {
@@ -73,78 +53,14 @@ public abstract class Database : IDatabase
         return ExtractUnique(builder: builder, result: result);
     }
 
-    /// <inheritdoc />
-    public async Task<TResult> QuerySingleAsync<TQueryParameters, TSourceObject, TResult>(IObjectBuilder<TSourceObject, TResult> builder, string storedProcedure, TQueryParameters param)
-        where TSourceObject : class, new() where TResult : class
-    {
-        IReadOnlyList<TSourceObject> result = await this.InternalQueryAsync<TSourceObject>(storedProcedure: storedProcedure, param: param);
-
-        return ExtractUnique(builder: builder, result: result);
-    }
-
-    /// <inheritdoc />
-    public async Task<TResult?> QuerySingleOrDefaultAsync<TSourceObject, TResult>(IObjectBuilder<TSourceObject, TResult> builder, string storedProcedure)
-        where TSourceObject : class, new() where TResult : class
-    {
-        IReadOnlyList<TSourceObject> result = await this.InternalQueryAsync<TSourceObject>(storedProcedure: storedProcedure, param: null);
-
-        return builder.Build(result.SingleOrDefault());
-    }
-
-    /// <inheritdoc />
-    public async Task<TResult?> QuerySingleOrDefaultAsync<TQueryParameters, TSourceObject, TResult>(IObjectBuilder<TSourceObject, TResult> builder, string storedProcedure, TQueryParameters param)
-        where TSourceObject : class, new() where TResult : class
-    {
-        IReadOnlyList<TSourceObject> result = await this.InternalQueryAsync<TSourceObject>(storedProcedure: storedProcedure, param: param);
-
-        return builder.Build(result.SingleOrDefault());
-    }
-
-    /// <inheritdoc />
-    public async Task<IReadOnlyList<TResult>> QueryAsync<TSourceObject, TResult>(IObjectCollectionBuilder<TSourceObject, TResult> builder, string storedProcedure)
-        where TSourceObject : class, new() where TResult : class
-    {
-        IEnumerable<TSourceObject> results = await this.InternalQueryAsync<TSourceObject>(storedProcedure: storedProcedure, param: null);
-
-        return builder.Build(results);
-    }
-
-    /// <inheritdoc />
-    public async Task<IReadOnlyList<TResult>> QueryAsync<TQueryParameters, TSourceObject, TResult>(IObjectCollectionBuilder<TSourceObject, TResult> builder,
-                                                                                                   string storedProcedure,
-                                                                                                   TQueryParameters param)
-        where TSourceObject : class, new() where TResult : class
-    {
-        IEnumerable<TSourceObject> results = await this.InternalQueryAsync<TSourceObject>(storedProcedure: storedProcedure, param: param);
-
-        return builder.Build(results);
-    }
-
-    /// <inheritdoc />
-    public async Task<IReadOnlyList<TResult>> QueryArbitrarySqlAsync<TResult>(string sql)
-        where TResult : new()
-    {
-        if (string.IsNullOrEmpty(sql))
-        {
-            throw new ArgumentNullException(nameof(sql));
-        }
-
-        using (IDbConnection connection = this.GetConnection())
-        {
-            // ReSharper disable once AccessToDisposedClosure - The IEnumerable is enumerated inside the using statement, connection can't be disposed before
-            // that happens
-            IEnumerable<TResult> result = await this.ExecuteWithRetriesAsync(func: () => connection.QueryAsync<TResult>(sql: sql, commandType: CommandType.Text), context: sql);
-
-            return result.ToArray();
-        }
-    }
-
     protected abstract bool IsTransientException(Exception exception);
 
     protected abstract void LogAndDispatchTransientExceptions(Exception exception, Context context, in TimeSpan delay, int retryCount, int maxRetries);
 
+    //
     protected abstract IDbConnection GetConnection();
 
+    //
     private static TReturn ExtractUnique<TSourceObject, TReturn>(IObjectBuilder<TSourceObject, TReturn> builder, IReadOnlyList<TSourceObject> result)
         where TSourceObject : class, new() where TReturn : class
     {
@@ -164,11 +80,13 @@ public abstract class Database : IDatabase
         throw new InvalidOperationException(message: "No match");
     }
 
+    //
     private static Task<int> InternalExecuteAsync(string storedProcedure, object? param, IDbConnection connection)
     {
         return connection.ExecuteAsync(sql: storedProcedure, param: param, commandType: CommandType.StoredProcedure);
     }
 
+    //
     private async Task<IReadOnlyList<TReturn>> InternalQueryAsync<TReturn>(string storedProcedure, object? param)
         where TReturn : new()
     {
