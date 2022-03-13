@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD0001.Publish.Example.Serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD0001.Publish.Example.Lib1", "AD0001.Publish.Example.Lib1\AD0001.Publish.Example.Lib1.csproj", "{2D5121C8-880F-4B03-AD45-E16A19505463}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD0001.Publish.Example.Lib1.Data.Interfaces", "AD0001.Publish.Example.Lib1.Data.Interfaces\AD0001.Publish.Example.Lib1.Data.Interfaces.csproj", "{DCA60DA1-817C-40A3-877B-1AAF218EBCA7}"
+EndProject
 Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{11183690-B635-4AD6-842D-63B134BDB26D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{2D5121C8-880F-4B03-AD45-E16A19505463}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D5121C8-880F-4B03-AD45-E16A19505463}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D5121C8-880F-4B03-AD45-E16A19505463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCA60DA1-817C-40A3-877B-1AAF218EBCA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA60DA1-817C-40A3-877B-1AAF218EBCA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA60DA1-817C-40A3-877B-1AAF218EBCA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA60DA1-817C-40A3-877B-1AAF218EBCA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

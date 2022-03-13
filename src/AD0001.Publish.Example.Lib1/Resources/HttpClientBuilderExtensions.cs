@@ -9,7 +9,7 @@ using Microsoft.Extensions.Http;
 using Polly;
 using Polly.Retry;
 
-namespace Credfeto.Notification.Bot.Twitch.Resources;
+namespace AD0001.Publish.Example.Lib1.Resources;
 
 /// <summary>
 ///     PollyHttpClientBuilderExtensions

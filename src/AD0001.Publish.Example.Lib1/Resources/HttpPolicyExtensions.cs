@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Polly;
 using Polly.Timeout;
 
-namespace Credfeto.Notification.Bot.Twitch.Resources;
+namespace AD0001.Publish.Example.Lib1.Resources;
 
 /// <summary>
 ///     Contains opinionated convenience methods for configuring policies to handle conditions typically representing transient faults when making <see cref="HttpClient" /> requests.

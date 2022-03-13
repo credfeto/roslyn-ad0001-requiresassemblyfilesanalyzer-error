@@ -28,14 +28,7 @@
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NonBlocking" Version="1.1.2"/>
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1"/>
-    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="6.0.3"/>
-    <PackageReference Include="TwitchLib.Api" Version="3.4.1"/>
-    <PackageReference Include="TwitchLib.Client" Version="3.2.4"/>
-    <PackageReference Include="TwitchLib.PubSub" Version="3.2.3"/>
-    <PackageReference Include="System.Interactive.Async" Version="6.0.1"/>
-    <PackageReference Include="System.Reactive" Version="5.0.0"/>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0"/>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AsyncFixer" Version="1.5.1" PrivateAssets="All"/>
@@ -46,8 +39,5 @@
     <PackageReference Include="SonarAnalyzer.CSharp" Version="8.36.1.44192" PrivateAssets="All"/>
     <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All"/>
     <PackageReference Include="ToStringWithoutOverrideAnalyzer" Version="0.6.0" PrivateAssets="All"/>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AD0001.Publish.Example.Lib1.Data.Interfaces\AD0001.Publish.Example.Lib1.Data.Interfaces.csproj"/>
   </ItemGroup>
 </Project>

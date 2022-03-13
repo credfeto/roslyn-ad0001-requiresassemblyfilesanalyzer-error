@@ -1,7 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Credfeto.Notification.Bot.Twitch;
+namespace AD0001.Publish.Example.Lib1;
 
 public interface IChannelFollowCount
 {

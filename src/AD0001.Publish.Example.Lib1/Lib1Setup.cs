@@ -1,5 +1,4 @@
-﻿using Credfeto.Notification.Bot.Twitch;
-using Credfeto.Notification.Bot.Twitch.Services;
+﻿using AD0001.Publish.Example.Lib1.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AD0001.Publish.Example.Lib1;

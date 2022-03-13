@@ -6,11 +6,11 @@ using System.Net.Http.Headers;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using Credfeto.Notification.Bot.Twitch.Resources;
+using AD0001.Publish.Example.Lib1.Resources;
 using Microsoft.Extensions.DependencyInjection;
 using Polly;
 
-namespace Credfeto.Notification.Bot.Twitch.Services;
+namespace AD0001.Publish.Example.Lib1.Services;
 
 public sealed class ChannelFollowCount : IChannelFollowCount
 {
