@@ -35,16 +35,6 @@ public abstract class Database : IDatabase
     }
 
     /// <inheritdoc />
-    public async Task<int> ExecuteAsync(string storedProcedure)
-    {
-        using (IDbConnection connection = this.GetConnection())
-        {
-            // ReSharper disable once AccessToDisposedClosure
-            return await this.ExecuteWithRetriesAsync(func: () => InternalExecuteAsync(storedProcedure: storedProcedure, param: null, connection: connection), context: storedProcedure);
-        }
-    }
-
-    /// <inheritdoc />
     public async Task<TResult> QuerySingleAsync<TSourceObject, TResult>(IObjectBuilder<TSourceObject, TResult> builder, string storedProcedure)
         where TSourceObject : class, new() where TResult : class
     {
@@ -57,10 +47,8 @@ public abstract class Database : IDatabase
 
     protected abstract void LogAndDispatchTransientExceptions(Exception exception, Context context, in TimeSpan delay, int retryCount, int maxRetries);
 
-    //
     protected abstract IDbConnection GetConnection();
 
-    //
     private static TReturn ExtractUnique<TSourceObject, TReturn>(IObjectBuilder<TSourceObject, TReturn> builder, IReadOnlyList<TSourceObject> result)
         where TSourceObject : class, new() where TReturn : class
     {
@@ -80,13 +68,6 @@ public abstract class Database : IDatabase
         throw new InvalidOperationException(message: "No match");
     }
 
-    //
-    private static Task<int> InternalExecuteAsync(string storedProcedure, object? param, IDbConnection connection)
-    {
-        return connection.ExecuteAsync(sql: storedProcedure, param: param, commandType: CommandType.StoredProcedure);
-    }
-
-    //
     private async Task<IReadOnlyList<TReturn>> InternalQueryAsync<TReturn>(string storedProcedure, object? param)
         where TReturn : new()
     {

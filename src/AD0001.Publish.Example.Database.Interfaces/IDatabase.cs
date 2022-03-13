@@ -10,14 +10,6 @@ namespace AD0001.Publish.Example.Database.Interfaces;
 public interface IDatabase
 {
     /// <summary>
-    ///     Execute a stored procedure
-    /// </summary>
-    /// <param name="storedProcedure">The stored proc to execute</param>
-    /// <returns>The number of rows affected</returns>
-    [SuppressMessage(category: "ReSharper", checkId: "UnusedMember.Global", Justification = "TODO: Review")]
-    Task<int> ExecuteAsync(string storedProcedure);
-
-    /// <summary>
     ///     Execute a sql statement with parameters and return a single <typeparamref name="TResult" />,
     /// </summary>
     /// <typeparam name="TResult">The type to return</typeparam>
