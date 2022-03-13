@@ -32,6 +32,12 @@
  - any: [ './**/*.md' ]
 "github-actions":
  - any: [ '.github/workflows/*.yml' ]
+"Database.Dapper":
+ - any: [ 'src/AD0001.Publish.Example.Database.Dapper/**/*' ]
+"Database.Interfaces":
+ - any: [ 'src/AD0001.Publish.Example.Database.Interfaces/**/*' ]
+"Database.Pgsql":
+ - any: [ 'src/AD0001.Publish.Example.Database.Pgsql/**/*' ]
 "Lib1":
  - any: [ 'src/AD0001.Publish.Example.Lib1/**/*' ]
 "Lib1.Data.Interfaces":
