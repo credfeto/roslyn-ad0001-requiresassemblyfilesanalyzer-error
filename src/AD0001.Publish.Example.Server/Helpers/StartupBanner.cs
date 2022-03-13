@@ -1,6 +1,6 @@
 using System;
 
-namespace Credfeto.Notification.Bot.Server.Helpers;
+namespace AD0001.Publish.Example.Server.Helpers;
 
 internal static class StartupBanner
 {

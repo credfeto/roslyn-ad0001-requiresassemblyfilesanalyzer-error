@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Core;
 
-namespace Credfeto.Notification.Bot.Server.ServiceStartup;
+namespace AD0001.Publish.Example.Server.ServiceStartup;
 
 internal static class Logging
 {

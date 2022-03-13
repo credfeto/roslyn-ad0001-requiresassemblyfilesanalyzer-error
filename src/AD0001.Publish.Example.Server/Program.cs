@@ -1,11 +1,11 @@
 using System.Threading.Tasks;
-using Credfeto.Notification.Bot.Server.Helpers;
-using Credfeto.Notification.Bot.Server.ServiceStartup;
+using AD0001.Publish.Example.Server.Helpers;
+using AD0001.Publish.Example.Server.ServiceStartup;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Credfeto.Notification.Bot.Server;
+namespace AD0001.Publish.Example.Server;
 
 internal static class Program
 {

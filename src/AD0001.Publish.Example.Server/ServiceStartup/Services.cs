@@ -1,10 +1,5 @@
-﻿using Credfeto.Notification.Bot.Database;
-using Credfeto.Notification.Bot.Database.Pgsql;
-using Credfeto.Notification.Bot.Database.Shared;
-using Credfeto.Notification.Bot.Server.Helpers;
-using Credfeto.Notification.Bot.Shared;
-using Credfeto.Notification.Bot.Twitch;
-using Credfeto.Notification.Bot.Twitch.Configuration;
+﻿using AD0001.Publish.Example.Lib1;
+using AD0001.Publish.Example.Server.Helpers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -12,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Core;
 
-namespace Credfeto.Notification.Bot.Server.ServiceStartup;
+namespace AD0001.Publish.Example.Server.ServiceStartup;
 
 internal static class Services
 {
@@ -26,12 +21,7 @@ internal static class Services
 
         services.AddOptions()
                 .AddAppLogging()
-                .AddResources()
                 .Configure<PgsqlServerConfiguration>(configurationRoot.GetSection("Database:Postgres"))
-                .AddPostgresql()
-                .AddDatabaseShared()
-                .AddApplicationDatabase()
-                .Configure<TwitchBotOptions>(configurationRoot.GetSection("Twitch"))
                 .AddTwitch();
     }
 

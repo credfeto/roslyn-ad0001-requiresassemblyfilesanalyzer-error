@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 
-namespace Credfeto.Notification.Bot.Server.Helpers;
+namespace AD0001.Publish.Example.Server.Helpers;
 
 /// <summary>
 ///     Application configuration helpers
