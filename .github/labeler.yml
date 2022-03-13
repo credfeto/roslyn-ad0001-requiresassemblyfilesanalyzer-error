@@ -34,5 +34,7 @@
  - any: [ '.github/workflows/*.yml' ]
 "Lib1":
  - any: [ 'src/AD0001.Publish.Example.Lib1/**/*' ]
+"Lib1.Data.Interfaces":
+ - any: [ 'src/AD0001.Publish.Example.Lib1.Data.Interfaces/**/*' ]
 "Server":
  - any: [ 'src/AD0001.Publish.Example.Server/**/*' ]
