@@ -16,6 +16,7 @@ Please ADD ALL Changes to the UNRELASED SECTION and not a specific release
 - FF-1429 - Updated TwitchLib to 3.5.0
 - FF-1429 - Updated TwitchLib to 3.5.2
 - FF-1429 - Updated Microsoft.Extensions to 6.0.4
+- FF-3881 - Updated DotNet SDK to 6.0.202
 ### Removed
 ### Deployment Changes
 
